@@ -1,6 +1,11 @@
 #!/bin/bash
 
+#GIT aliases
 alias	ls='ls --color=auto' \
 	gs='git status' \
 	ga='git add' \
 	gc='git commit' \
+	gd='git diff'\
+
+#pacman aliases
+alias	spacman='sudo pacman' \
