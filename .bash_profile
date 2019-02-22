@@ -4,6 +4,5 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-startx
+[[ -f ~/.profile ]] && . ~/.profile
 
-redshift -l -21.1775:-47.8103 -b 0.1:0.5
