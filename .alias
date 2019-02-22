@@ -1,1 +1,6 @@
-alias ls='ls --color=auto'
+#!/bin/bash
+
+alias	ls='ls --color=auto' \
+	gs='git status' \
+	ga='git add' \
+	gc='git commit' \
