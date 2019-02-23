@@ -1,2 +1,14 @@
 .bash_history
 .cache
+
+#Ignore images inside Wallpaper folder but not the folder
+Wallpapers/*
+!Wallpapers/.gitkeep
+
+#Add GTK themes folder to git
+.themes/*
+!.themes/.gitkeep
+
+#Add icons folder to git
+.icons/*
+!.icons/.gitkeep

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#Options for background --bg-[tile|center|max|fill]
+
+#Set single wall paper
+feh	--bg-scale --randomize 	--no-fehbg ~/Wallpapers/* ~/Wallpapers/*
