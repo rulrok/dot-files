@@ -1,6 +1,8 @@
 #!/bin/bash
 [[ -f ~/.startup ]] && source ~/.startup &
 
-exec i3
+#start wallpaper manager
+~/.fehbg &
 
+exec i3 
 

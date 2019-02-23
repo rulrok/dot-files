@@ -1,6 +1,4 @@
 #!/bin/bash
 
 #Redshift for reducing blue light emission
-! preg -x redshift > /dev/null && exec redshift -l -21.1775:-47.8103 -b 0.8:0.5 -t 6000K:4000K -g 1:1:0.8 
-
-
+! preg -x redshift > /dev/null && exec redshift -l -21.1775:-47.8103 -b 0.8:0.5 -t 6000K:4000K -g 1:1:0.8

@@ -2,5 +2,10 @@
 
 #Options for background --bg-[tile|center|max|fill]
 
+if [ ! -d "$HOME/Wallpapers" ]
+then
+	mkdir "$HOME/Wallpapers"
+fi
+
 #Set single wall paper
 feh	--bg-scale --randomize 	--no-fehbg ~/Wallpapers/* ~/Wallpapers/*
