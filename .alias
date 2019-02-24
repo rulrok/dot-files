@@ -10,5 +10,6 @@ alias	ls='ls --color=auto' \
 #pacman aliases
 alias	spacman='sudo pacman' \
 
-#other aliases
+#general aliases
 alias	vim='nvim'
+alias	c='clear'
