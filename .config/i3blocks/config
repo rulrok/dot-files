@@ -28,11 +28,11 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+#Weather specifiying my geo location
 [weather]
 command=curl -Ss 'https://wttr.in/-21.1775,-47.8103?m&format=2' | xargs echo
 interval=3600
 color=#A4C2F4
-
 
 # Volume indicator
 #
@@ -112,6 +112,11 @@ label=⚡
 #instance=1
 interval=30
 
+[battery2]
+command=$SCRIPT_DIR/battery2
+markup=pango
+interval=30
+
 # Temperature
 #
 # Support multiple chips, though lm-sensors.
@@ -120,6 +125,26 @@ interval=30
 [temperature]
 label=TEMP
 interval=10
+
+#[usb]
+#command=$SCRIPT_DIR/usb
+#markup=pango
+#signal=1
+#interval=10
+#IGNORE_LIST=[]
+#IGNORE_LIST=["sdd1", "mapper/sda1_crypt"]
+#INFO_TEXT_COLOR=white
+#MOUNTED_COLOR=green
+#PLUGGED_COLOR=gray
+#LOCKED_COLOR=gray
+#UNLOCKED_NOT_MOUNTED_COLOR=yellow
+##PARTITIONLESS_COLOR=red
+#PARTITIONLESS_TEXT=no partitions
+#SEPARATOR=<span color='gray'> | </span>
+#LOCKED_INDICATOR= 
+#UNLOCKED_INDICATOR= 
+#READONLY_INDICATOR=ro
+#TRUNCATE_FS_LABELS=[not set by default, accepts +/- integers]
 
 # Date Time
 #
