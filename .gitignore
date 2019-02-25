@@ -12,3 +12,7 @@ Wallpapers/*
 #Add icons folder to git
 .icons/*
 !.icons/.gitkeep
+
+#Ignore ssh keys
+.ssh/*
+!.ssh/config
