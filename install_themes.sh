@@ -32,12 +32,12 @@ fi
 (cd "$NORD_CLONE_DIR/nord-terminator" && . install.sh)
 TERMINATOR_CONFIG_FILE="$HOME/.config/terminator/config"
 #Also change font for terminator
-grep "font|Inconsolata" "$TERMINATOR_CONFIG_FILE" > /dev/null
+grep "font|Noto Color Emoji" "$TERMINATOR_CONFIG_FILE" > /dev/null
 if [ $? -gt 0 ]
 then
-	sed -i -E "s/(\[global_config\])/\1\n  font = Inconsolata 14/" "$TERMINATOR_CONFIG_FILE"
+	sed -i -E "s/(\[global_config\])/\1\n  font = Noto Color Emoji 14/" "$TERMINATOR_CONFIG_FILE"
 else
-	sed -i -E "s/font.*|.*Inconsolata/font = Inconsolata 14/i" "$TERMINATOR_CONFIG_FILE"
+	sed -i -E "s/font.*|.*Noto Color Emoji/font = Noto Color Emoji 14/i" "$TERMINATOR_CONFIG_FILE"
 fi
 #Change terminator default profile to nord
 sed -i -E "s/\[\[nord\]\]/\[\[default\]\]/" "$TERMINATOR_CONFIG_FILE"

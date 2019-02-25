@@ -6,7 +6,8 @@
 # License:    MIT
 
 [global_config]
-  font = Inconsolata 14
+  #font = Inconsolata 14
+  font = Noto Color Emoji 14
   title_inactive_bg_color = "#4C566A"
   title_inactive_fg_color = "#D8DEE9"
   title_receive_bg_color = "#8FBCBB"
