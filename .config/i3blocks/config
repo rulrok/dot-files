@@ -28,6 +28,12 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[weather]
+command=curl -Ss 'https://wttr.in/-21.1775,-47.8103?m&format=2' | xargs echo
+interval=3600
+color=#A4C2F4
+
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
