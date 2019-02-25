@@ -36,17 +36,17 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+shift+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -55,10 +55,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -67,10 +67,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -140,20 +140,30 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+	#increasing sizes
+        bindsym h resize grow left 10 px or 10 ppt
+        bindsym j resize grow down 10 px or 10 ppt
+        bindsym k resize grow up 10 px or 10 ppt
+        bindsym l resize grow right 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	#increasing sizes
+        bindsym Left resize grow left 10 px or 10 ppt
+        bindsym Down resize grow down 10 px or 10 ppt
+        bindsym Up resize grow up 10 px or 10 ppt
+        bindsym Right resize grow right 10 px or 10 ppt
+
+	#reducing sizes
+	bindsym shift+h resize shrink right 10 px or 10 ppt
+	bindsym shift+j resize shrink down 10 px or 10 ppt
+        bindsym shift+k resize shrink up 10 px or 10 ppt
+	bindsym shift+l resize shrink left 10 px or 10 ppt
+	
+	#reducing sizes
+	bindsym shift+Left resize shrink right 10 px or 10 ppt
+	bindsym shift+Up resize shrink down 10 px or 10 ppt
+        bindsym shift+Down resize shrink up 10 px or 10 ppt
+	bindsym shift+Right resize shrink left 10 px or 10 ppt
+
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
