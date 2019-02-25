@@ -66,8 +66,8 @@ workspace $ws3 output LVDS-0
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Lock screen in a windows-fashion way
-bindsym $mod+Shift+l exec --no-startup-id i3lock-fancy -n -b=0x8
+# Lock screen in a fancy way
+bindsym $mod+Pause exec --no-startup-id i3lock-fancy -n -b=0x8
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
