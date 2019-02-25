@@ -27,10 +27,41 @@ font pango:monospace 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 
+# Don't show borders on edge of screen
+hide_edge_borders smart
+
+# Popups during fullscreen mode
+popup_during_fullscreen smart
+
+#Center windows' title
+title_align center
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2: Music"
+set $ws3 "3: Mail"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+
 # Windows and applications to start in float mode
 for_window [instance="dropdown_*"] floating enable
-for_window [title="(?i)calc(ulator)?"] floating enable
+for_window [window_type="dialog|utility|splash|popup_menu"] floating enable
+for_window [window_role="About"] floating enable
+for_window [title="(?i)calc(ulator)?"] floating enable 
 
+#Assiging programs to specific workspaces (special case for spotify)
+for_window [class="Spotify"] move to workspace $ws2
+assign [class="(?i)mail|thunderbird"] $ws3
+
+workspace $ws2 output LVDS-0
+workspace $ws3 output LVDS-0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -47,6 +78,9 @@ bindsym $mod+shift+d exec dmenu_run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# Alternate betweek workspaces
+bindsym $mod+Tab workspace back_and_forth
 
 # change focus
 bindsym $mod+h focus left
@@ -98,30 +132,17 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -182,6 +203,21 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
-        status_command i3status
+        status_command i3blocks
+	position top
+	tray_output primary
+	font pango:Inconsolata Bold 10
+
+	colors {
+		#nord colors
+		background #3b4252
+		statusline #d8dee9
+		separator  #eceff4
+
+		focused_workspace #5e81ac #81a1c1 #d8dee9
+		binding_mode      #bf616a #bf616a #ebcb8b
+		urgent_workspace  #bf616a #bf616a #ebcb8b
+	}
 }
