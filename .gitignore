@@ -20,3 +20,6 @@ Wallpapers/*
 #Keep screenshots folder
 Pictures/Screenshots/*
 !Pictutes/Screenshots/.gitkeep
+
+#Vim configs
+.vim/.netrwhist
