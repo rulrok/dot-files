@@ -28,6 +28,27 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[crypto]
+#label=BTC
+markup=pango
+interval=60
+instance=bitcoin
+command=$SCRIPT_DIR/crypto
+
+[crypto]
+#label=LTC
+markup=pango
+interval=57
+instance=litecoin
+command=$SCRIPT_DIR/crypto
+
+[crypto]
+#label=XRP
+markup=pango
+interval=63
+instance=ripple
+command=$SCRIPT_DIR/crypto
+
 #Weather specifiying my geo location
 [weather]
 command=curl -Ss 'https://wttr.in/-21.1775,-47.8103?m&format=2' | xargs echo
