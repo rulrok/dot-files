@@ -29,11 +29,11 @@ else:
 percentChange = float(data['percent_change_' + PRICE_CHANGE_PERIOD])
 percentChangeFormat = '<span color="{}">{} {:.2f}%</span>'
 if percentChange > 0:
-    percentChangeInfo = percentChangeFormat.format('#3BB92D', '▲', percentChange)
+    percentChangeInfo = percentChangeFormat.format('#A3BE8C', '▲', percentChange)
 elif percentChange == 0: 
-    percentChangeInfo = percentChangeFormat.format('#CCCCCC', '―', percentChange)
+    percentChangeInfo = percentChangeFormat.format('#EBCB8B', '―', percentChange)
 else: 
-    percentChangeInfo = percentChangeFormat.format('#F7555E', '▼', percentChange)
+    percentChangeInfo = percentChangeFormat.format('#BF616A', '▼', percentChange)
 
 print(('{} {:.' + str(precision) + 'f} {}').format(data['symbol'], price, percentChangeInfo)) # Full Text
 print(('{} {:.' + str(precision) + 'f}').format(data['symbol'], price)) # Short Text
