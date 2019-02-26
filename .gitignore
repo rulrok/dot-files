@@ -16,3 +16,7 @@ Wallpapers/*
 #Ignore ssh keys
 .ssh/*
 !.ssh/config
+
+#Keep screenshots folder
+Pictures/Screenshots/*
+!Pictutes/Screenshots/.gitkeep

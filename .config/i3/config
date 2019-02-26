@@ -82,6 +82,11 @@ bindsym $mod+shift+d exec dmenu_run
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Print screen
+bindsym Print exec --no-startup-id maim ~/Pictures/Screenshots/screen-shot-"$(date '+%y%m%d-%H%M-%S-%N').png"
+
+bindsym Shift+Print exec --no-startup-id maim -s ~/Pictures/Screenshots/partial-screen-shot-"$(date '+%y%m%d-%H%M-%S-%N').png"
+
 # Alternate betweek workspaces
 bindsym $mod+Tab workspace back_and_forth
 
